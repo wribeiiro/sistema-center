@@ -1,0 +1,23 @@
+RewriteEngine On
+
+ErrorDocument 404 /pages/404.php
+ErrorDocument 403 /pages/404.php
+
+RewriteRule ^administrativo/?$  	 administrativo.php [NC,L]
+
+#bloqueia download da estrutura de pastas por wget
+RewriteCond %{HTTP_USER_AGENT} wget [NC]
+RewriteRule .* - [F]
+
+#bloquear listagem de arquivos
+Options -Indexes
+
+#forcar a insercao de www
+RewriteCond %{HTTP_HOST} !^$
+#evita que execute no localhost
+RewriteCond %{HTTP_HOST} !^localhost(.*)
+#evita que execute no ip
+RewriteCond %{HTTP_HOST} !^50.116.87.219(.*)
+RewriteCond %{HTTP_HOST} !^www\. [NC]
+RewriteCond %{HTTPS}s ^on(s)|
+RewriteRule ^ http%1://www.%{HTTP_HOST}%{REQUEST_URI} [R=301,L]
