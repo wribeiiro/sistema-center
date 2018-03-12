@@ -6,25 +6,21 @@
 	include_once("../seguranca.php");
 	include_once("../conexao.php");
 
-	$tipo_pessoa 		= $_POST["tipo_pessoa"];
-	$nome 				= $_POST["nome"];
-	$telefone 			= $_POST["telefone"];
-	$cnpj 				= $_POST["cnpj"];
-	$situacao 			= $_POST["situacao"];
-	$data_cadastro		= $_POST["data_cadastro"];
-	$observacao 		= $_POST["observacao"];
-	$contato 			= $_POST["contato"];
-	$email 				= $_POST["email"];
-	$senhas  			= $_POST["senhas"];
-	if (isset($_POST["check1"])):
-		$tipo_servico = $_POST["check1"];
-	elseif (isset($_POST["check2"])):
-		$tipo_servico = $_POST["check2"];
-	else:
-		$tipo_servico = $_POST["check3"];
-	endif;
-	$valor_total        = $_POST["valor_total"];
-	$valor_novo		    =  trim(str_replace(',', '',$valor_total));
+	$tipo_pessoa 	= filter_input(INPUT_POST, 'tipo_pessoa');
+	$nome 			= filter_input(INPUT_POST, 'nome');
+	$telefone 		= filter_input(INPUT_POST, 'telefone');
+	$cnpj 			= filter_input(INPUT_POST, 'cnpj');
+	$situacao 		= filter_input(INPUT_POST, 'situacao');
+	$data_cadastro 	= filter_input(INPUT_POST, 'data_cadastro');
+	$observacao 	= filter_input(INPUT_POST, 'observacao');
+	$contato 		= filter_input(INPUT_POST, 'contato');
+	$email 			= filter_input(INPUT_POST, 'email'); 
+	$senhas 		= filter_input(INPUT_POST, 'senhas');
+
+	$tipo_servico   = filter_input(INPUT_POST, 'tipo_servico');
+
+	$valor_total    = filter_input(INPUT_POST, 'valor_total');
+	$valor_novo		= trim(str_replace(',', '',$valor_total)); 
 
 	$sqlcnpj   = "SELECT cnpj FROM clientes WHERE cnpj = '$cnpj'";
 	$cnpjquery = mysqli_query($con, $sqlcnpj);

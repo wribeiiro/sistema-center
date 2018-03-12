@@ -166,7 +166,7 @@
                         <h1 class="page-header">Notícias</h1>
                         <div class="list-group">
                             <?php
-                                $xml = simplexml_load_file('http://www.contabeis.com.br/rss/noticias/') or die("Erro ao carregar arquivo, o arquivo não existe, ou verifique sua conexão com a internet!");
+                                $xml = simplexml_load_file('http://pox.globo.com/rss/g1/turismo-e-viagem/') or die("Erro ao carregar arquivo, o arquivo não existe, ou verifique sua conexão com a internet!");
                                 $cont = 0;
                                 foreach ($xml->channel->item as $noticia) {
                                     $cont ++;
@@ -180,7 +180,7 @@
                                         <a href=\"$noticia->link\" target=\"_blank\" class=\"list-group-item\">
                                             <i class=\"fa fa-rss fa-fw\"></i> $noticia->title
                                             <br>
-                                            <small>$noticia->pubDate - Fonte: Portal Contábeis
+                                            <small>$noticia->pubDate - Fonte: G1
                                             </small>       
                                         </a><br>
                                     ";
