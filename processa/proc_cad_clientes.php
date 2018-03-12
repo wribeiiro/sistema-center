@@ -16,6 +16,13 @@
 	$contato 			= $_POST["contato"];
 	$email 				= $_POST["email"];
 	$senhas  			= $_POST["senhas"];
+	if (isset($_POST["check1"])):
+		$tipo_servico = $_POST["check1"];
+	elseif (isset($_POST["check2"])):
+		$tipo_servico = $_POST["check2"];
+	else:
+		$tipo_servico = $_POST["check3"];
+	endif;
 	$valor_total        = $_POST["valor_total"];
 	$valor_novo		    =  trim(str_replace(',', '',$valor_total));
 
@@ -26,7 +33,7 @@
 		echo'<script>alert("Já existe um cliente com o mesmo CPF/CNPJ! :(");</script>';
 		echo '<script>location.href="../administrativo.php?link=12";</script>';
 	} else {
-		$sql = "INSERT INTO clientes (tipo_pessoa, nome, telefone, cnpj, situacao, data_cadastro, observacao, contato, email, senhas, valor_total) VALUES ('$tipo_pessoa', '$nome', '$telefone', '$cnpj', '$situacao', '$data_cadastro', '$observacao', '$contato', '$email', '$senhas', '$valor_novo')";
+		$sql = "INSERT INTO clientes (tipo_pessoa, nome, telefone, cnpj, situacao, data_cadastro, observacao, contato, email, senhas, valor_total, tipo_servico) VALUES ('$tipo_pessoa', '$nome', '$telefone', '$cnpj', '$situacao', '$data_cadastro', '$observacao', '$contato', '$email', '$senhas', '$valor_novo', '$tipo_servico')";
 		$query = mysqli_query($con, $sql);
 
 		if (mysqli_affected_rows($con) != 0 ){

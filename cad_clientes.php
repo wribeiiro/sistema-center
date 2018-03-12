@@ -72,13 +72,21 @@
 						    <input type="text" class="form-control money" name="valor_total" id="valor_total" placeholder="0.00">
 						</div>
 					</div>
-					<div class="col-sm-6">
+					<div class="col-sm-3">
+						<div class="form-group">
+						    <label>Tipo Serviço: </label>
+						    <br><input type="checkbox" name="check1" value="A"> Acompanhemento 
+	 					    <br><input type="checkbox" name="S"> Studio 
+						    <br><input type="checkbox" name="O"> Outros
+						</div>
+					</div>
+					<div class="col-sm-4">
 						<div class="form-group">
 						    <label>Endereço: </label>
 						  	<textarea class="form-control" name="senhas" rows="7" placeholder="Endereço do Cliente"></textarea>
 						</div>
 					</div>		
-					<div class="col-sm-6">
+					<div class="col-sm-5">
 						<div class="form-group">
 						    <label>Observação: </label>
 						  	<textarea class="form-control" name="observacao" rows="7" placeholder="Observações do cliente"></textarea>

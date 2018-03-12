@@ -105,13 +105,34 @@
 						    <input type="text" class="form-control money" name="valor_total" id="valor_total" placeholder="Valor total em aberto" value="<?php echo $resultado['valor_total'] ?>">
 						</div>
 					</div>
-					<div class="col-sm-6">
+					<div class="col-sm-3">
+						<div class="form-group">
+						    <label>Tipo Serviço: </label>
+						    <br>
+						    <?php 
+						    	if ($resultado['tipo_servico'] == 'A'):
+						    		echo "<input type=\"checkbox\" name=\"check1\" checked=\"checked\" value=\"A\"> Acompanhamento<br>";
+						    		echo "<input type=\"checkbox\" name=\"check2\" value=\"S\"> Studios <br>";
+						    		echo "<input type=\"checkbox\" name=\"check3\" value=\"O\"> Outros ";
+						    	elseif ($resultado['tipo_servico'] == 'S'):
+						    		echo "<input type=\"checkbox\" name=\"check1\" value=\"A\"> Acompanhamento <br>";
+						    		echo "<input type=\"checkbox\" name=\"check2\" checked=\"checked\" value=\"S\"> Studios <br>";
+						    		echo "<input type=\"checkbox\" name=\"check3\" value=\"O\"> Outros ";	
+						    	else:
+						    		echo "<input type=\"checkbox\" name=\"check1\" value=\"A\"> Acompanhamento <br>";
+						    		echo "<input type=\"checkbox\" name=\"check2\" value=\"S\"> Studios <br>";
+						    		echo "<input type=\"checkbox\" name=\"check3\" checked=\"checked\" value=\"O\"> Outros ";
+						    	endif;						    
+						    ?>
+						</div>
+					</div>
+					<div class="col-sm-4">
 						<div class="form-group">
 						    <label>Endereço: </label>
 						  	<textarea class="form-control" name="senhas" rows="7" placeholder="Endereço do Cliente"><?php echo $resultado['senhas']; ?></textarea>
 						</div>
 					</div>					
-					<div class="col-sm-6">
+					<div class="col-sm-5">
 						<div class="form-group">
 						    <label>Observação: </label>
 						  	<textarea class="form-control" name="observacao" rows="7" placeholder="Observações do cliente"><?php echo $resultado['observacao'] ?></textarea>
