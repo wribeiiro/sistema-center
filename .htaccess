@@ -1,9 +1,7 @@
 RewriteEngine On
 
-ErrorDocument 404 /pages/404.php
-ErrorDocument 403 /pages/404.php
-
-RewriteRule ^administrativo/?$  	 administrativo.php [NC,L]
+#ErrorDocument 404 /pages/404.php
+#ErrorDocument 403 /pages/404.php
 
 #bloqueia download da estrutura de pastas por wget
 RewriteCond %{HTTP_USER_AGENT} wget [NC]

@@ -2,11 +2,11 @@
 
 	//date_default_timezone_set('America/Sao_Paulo');
 	ini_set('date.timezone', 'America/Sao_Paulo');
-
+ 
 	$host = 'localhost';
-	$user = 'root';
-	$pass = '1';
-	$db   = 'tickets';
+	$user = 'centerco_sistem';
+	$pass = 'Nova@500';
+	$db   = 'centerco_sistema';
 
 	$con = mysqli_connect($host, $user, $pass, $db) or die ("erro ao conectar com banco") . print mysqli_error();
 
