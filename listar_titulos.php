@@ -1,6 +1,6 @@
 <?php
 
-    $sql = "SELECT  a.data_lanc, a.data_venc, a.id, a.id_cliente, a.pago, a.valor_tit, b.id, b.nome
+    $sql = "SELECT  a.data_lanc, a.data_venc, a.id AS id_tit, a.id_cliente, a.pago, a.valor_tit, b.id, b.nome
     FROM 
         titulos_rec a
     INNER JOIN 
@@ -45,17 +45,17 @@
 									$ndata_venc  = date('d/m/Y', $data_venc);
 
 									echo "<tr>";
-                                        echo "<td>".$linhas['id']."</td>";
-                                        echo "<td>".$linhas['nome']."</td>";
+                                        echo "<td>".$linhas['id_tit']."</td>";
+                                        echo "<td>".ucfirst(strtolower($linhas['nome']))."</td>";
                                         echo "<td>".$ndata_lanc."</td>";
                                         echo "<td>".$ndata_venc."</td>";
                                         echo "<td>".$linhas['valor_tit']."</td>";
                                         echo "<td>".$linhas['pago']."</td>";
 										?>
 										<td> 
-											<a href='administrativo.php?link=39&id=<?php echo $linhas['id']; ?>' title='Editar'><button type="button" class="btn btn-primary btn-circle"><i class="fa fa-search"></i></button></a>
+											<a href='administrativo.php?link=39&id=<?php echo $linhas['id_tit']; ?>' title='Editar'><button type="button" class="btn btn-primary btn-sm">Editar</button></a>
 
-											<a href='processa/proc_apagar_titulos.php?id=<?php echo $linhas['id']; ?>' title='Excluir'><button type="button" class="btn btn-warning btn-circle"><i class="fa fa-times"></i></button></a>
+											<a href='processa/proc_apagar_titulos.php?id=<?php echo $linhas['id_tit']; ?>' title='Excluir'><button type="button" class="btn btn-danger btn-sm">Excluir</button></a>
                                         </td>
 										<?php
 									echo "</tr>";
