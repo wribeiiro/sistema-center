@@ -46,6 +46,10 @@
                     responsive: true
                 });
 
+                $('#table-titulos').DataTable({
+                    responsive: true
+                });
+
                 //tooltip
                  $('[data-toggle="tooltip"]').tooltip();
 
@@ -55,7 +59,7 @@
                 // mascaras
                 $(".calendario").mask("9999/99/99");
                 $("#telefone").mask("(99) 9999-9999");
-                $(".dataf").mask("9999/99/99");
+                $(".date").mask("99/99/9999");
                 $(".time").mask("99:99:99");
 
                 $("#money").maskMoney();

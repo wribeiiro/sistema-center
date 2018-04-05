@@ -18,7 +18,7 @@
             </div>
             <div class="row">
                 <div class="col-lg-3 col-md-6">
-                    <div class="panel panel-green">
+                    <div class="panel panel-yellow">
                         <div class="panel-heading">
                             <div class="row">
                                 <div class="col-xs-3">
@@ -71,7 +71,7 @@
                                 </div>
                             </div>
                         </div>
-                        <a href="administrativo.php?link=25">
+                        <a href="#">
                             <div class="panel-footer">
                                 <span class="pull-left">Ver Detalhes</span>
                                 <span class="pull-right"><i class="fa fa-arrow-circle-right"></i></span>
@@ -81,16 +81,16 @@
                     </div>
                 </div>
                 <div class="col-lg-3 col-md-6">
-                    <div class="panel panel-yellow">
+                    <div class="panel panel-green">
                         <div class="panel-heading">
                             <div class="row">
                                 <div class="col-xs-3">
-                                    <i class="fa fa-question-circle fa-4x"></i>
+                                    <i class="fa fa-money fa-4x"></i>
                                 </div>
                                 <div class="col-xs-9 text-right">
                                     <div class="huge" style="font-size: 30px">
                                         <?php require_once ("conexao.php");
-                                            $sql = "SELECT COUNT(*) AS total FROM ordem_servicos";
+                                            $sql = "SELECT COUNT(*) AS total FROM titulos_rec";
                                             $res = mysqli_query($con, $sql);
 
                                             $linhas = mysqli_fetch_assoc($res);
@@ -98,11 +98,11 @@
                                             echo $linhas['total'];
                                         ?>
                                     </div>
-                                    <div>Ordem de Serviços</div>
+                                    <div>Títulos a Receber</div>
                                 </div>
                             </div>
                         </div>
-                        <a href="administrativo.php?link=20">
+                        <a href="administrativo.php?link=37">
                             <div class="panel-footer">
                                 <span class="pull-left">Ver Detalhes</span>
                                 <span class="pull-right"><i class="fa fa-arrow-circle-right"></i></span>

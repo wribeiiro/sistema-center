@@ -1,6 +1,6 @@
 <?php
 
-	$sql = "SELECT * FROM usuarios ORDER BY 'id'";
+	$sql = "SELECT  * FROM usuarios";
 	$resultado = mysqli_query($con, $sql);
 	$linhas = mysqli_num_rows($resultado);
 ?>	
@@ -32,11 +32,11 @@
 						<tbody>
 							<?php 
 								while($linhas = mysqli_fetch_array($resultado)){
-									if ($linhas['nivel_acesso_id']==1) {
-										$linhas['nivel_acesso_id']='Administrador';
-									}else {
-										$linhas['nivel_acesso_id']='Usuário';
-									}
+									if($linhas['nivel_acesso_id'] == 1):
+										$linhas['nivel_acesso_id'] = 'Administrador';
+									else:
+										$linhas['nivel_acesso_id'] = 'Usuário';
+									endif;
 									echo "<tr>";
 										echo "<td>".$linhas['id']."</td>";
 										echo "<td>".$linhas['nome']."</td>";
@@ -49,6 +49,7 @@
 											<a href='administrativo.php?link=4&id=<?php echo $linhas['id']; ?>' data-toggle='tooltip' title='Editar'><button type="button" class="btn btn-info btn-circle"><i class="fa fa-pencil"></i></button></a>
 											
 											<a href='processa/proc_apagar_usuario.php?id=<?php echo $linhas['id']; ?>' data-toggle='tooltip' title='Excluir'><button type="button" class="btn btn-warning btn-circle"><i class="fa fa-times"></i></button></a>
+										</td>
 										<?php
 									echo "</tr>";
 								}

@@ -1,11 +1,11 @@
 -- phpMyAdmin SQL Dump
--- version 4.7.7
+-- version 4.7.4
 -- https://www.phpmyadmin.net/
 --
--- Host: localhost:3306
--- Generation Time: Apr 04, 2018 at 02:39 PM
--- Server version: 5.6.38
--- PHP Version: 5.6.30
+-- Host: 127.0.0.1
+-- Generation Time: 05-Abr-2018 às 02:25
+-- Versão do servidor: 10.1.30-MariaDB
+-- PHP Version: 7.2.1
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
 SET AUTOCOMMIT = 0;
@@ -19,13 +19,13 @@ SET time_zone = "+00:00";
 /*!40101 SET NAMES utf8mb4 */;
 
 --
--- Database: `centerco_sistema`
+-- Database: `sistema-center`
 --
 
 -- --------------------------------------------------------
 
 --
--- Table structure for table `clientes`
+-- Estrutura da tabela `clientes`
 --
 
 CREATE TABLE `clientes` (
@@ -45,7 +45,7 @@ CREATE TABLE `clientes` (
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 --
--- Dumping data for table `clientes`
+-- Extraindo dados da tabela `clientes`
 --
 
 INSERT INTO `clientes` (`id`, `tipo_pessoa`, `nome`, `telefone`, `cnpj`, `situacao`, `data_cadastro`, `observacao`, `contato`, `email`, `senhas`, `valor_total`, `tipo_servico`) VALUES
@@ -63,7 +63,7 @@ INSERT INTO `clientes` (`id`, `tipo_pessoa`, `nome`, `telefone`, `cnpj`, `situac
 -- --------------------------------------------------------
 
 --
--- Table structure for table `logusuarios`
+-- Estrutura da tabela `logusuarios`
 --
 
 CREATE TABLE `logusuarios` (
@@ -75,7 +75,7 @@ CREATE TABLE `logusuarios` (
 ) ENGINE=MyISAM DEFAULT CHARSET=latin1;
 
 --
--- Dumping data for table `logusuarios`
+-- Extraindo dados da tabela `logusuarios`
 --
 
 INSERT INTO `logusuarios` (`id`, `id_usuario`, `login`, `data_hora`, `ip`) VALUES
@@ -112,12 +112,13 @@ INSERT INTO `logusuarios` (`id`, `id_usuario`, `login`, `data_hora`, `ip`) VALUE
 (31, 2, 'Center Collor', '2018-03-16 11:54:57', NULL),
 (32, 2, 'Center Collor', '2018-03-22 15:04:25', NULL),
 (33, 2, 'Center Collor', '2018-03-26 10:46:20', NULL),
-(34, 2, 'Center Collor', '2018-04-04 17:35:44', NULL);
+(34, 2, 'Center Collor', '2018-04-04 17:35:44', NULL),
+(35, 2, 'Center Collor', '2018-04-04 20:00:28', NULL);
 
 -- --------------------------------------------------------
 
 --
--- Table structure for table `nivel_acessos`
+-- Estrutura da tabela `nivel_acessos`
 --
 
 CREATE TABLE `nivel_acessos` (
@@ -128,7 +129,7 @@ CREATE TABLE `nivel_acessos` (
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 --
--- Dumping data for table `nivel_acessos`
+-- Extraindo dados da tabela `nivel_acessos`
 --
 
 INSERT INTO `nivel_acessos` (`id`, `nome_nivel`, `created`, `modified`) VALUES
@@ -138,7 +139,7 @@ INSERT INTO `nivel_acessos` (`id`, `nome_nivel`, `created`, `modified`) VALUES
 -- --------------------------------------------------------
 
 --
--- Table structure for table `ordem_servicos`
+-- Estrutura da tabela `ordem_servicos`
 --
 
 CREATE TABLE `ordem_servicos` (
@@ -156,7 +157,7 @@ CREATE TABLE `ordem_servicos` (
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 --
--- Dumping data for table `ordem_servicos`
+-- Extraindo dados da tabela `ordem_servicos`
 --
 
 INSERT INTO `ordem_servicos` (`id`, `id_cliente`, `id_usuario`, `status`, `data_inicial`, `data_final`, `garantia`, `descricao`, `defeito`, `laudo`, `observacoes`) VALUES
@@ -167,7 +168,7 @@ INSERT INTO `ordem_servicos` (`id`, `id_cliente`, `id_usuario`, `status`, `data_
 -- --------------------------------------------------------
 
 --
--- Table structure for table `servicos`
+-- Estrutura da tabela `servicos`
 --
 
 CREATE TABLE `servicos` (
@@ -178,7 +179,7 @@ CREATE TABLE `servicos` (
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 --
--- Dumping data for table `servicos`
+-- Extraindo dados da tabela `servicos`
 --
 
 INSERT INTO `servicos` (`id`, `nome`, `preco`, `descricao`) VALUES
@@ -199,7 +200,36 @@ INSERT INTO `servicos` (`id`, `nome`, `preco`, `descricao`) VALUES
 -- --------------------------------------------------------
 
 --
--- Table structure for table `usuarios`
+-- Estrutura da tabela `titulos_rec`
+--
+
+CREATE TABLE `titulos_rec` (
+  `id` int(11) NOT NULL,
+  `id_cliente` int(11) NOT NULL,
+  `data_lanc` date NOT NULL,
+  `data_venc` date NOT NULL,
+  `data_pag` date DEFAULT NULL,
+  `num_nota` varchar(100) DEFAULT NULL,
+  `valor_tit` double(11,2) NOT NULL,
+  `valor_pago` double(11,2) DEFAULT NULL,
+  `observacao` varchar(250) DEFAULT NULL,
+  `forma_pgto` varchar(100) DEFAULT NULL,
+  `pago` char(1) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+
+--
+-- Extraindo dados da tabela `titulos_rec`
+--
+
+INSERT INTO `titulos_rec` (`id`, `id_cliente`, `data_lanc`, `data_venc`, `data_pag`, `num_nota`, `valor_tit`, `valor_pago`, `observacao`, `forma_pgto`, `pago`) VALUES
+(1, 1, '2018-04-04', '2018-04-25', NULL, 'nt0-2018', 250.00, NULL, 'Titulo lancado para teste', 'dinheiro', 'N'),
+(3, 11, '2018-04-04', '2019-05-05', '1969-12-31', 'dchq2332', 2505.55, 0.00, 'teste lancamento', 'dinheiro', 'N'),
+(4, 5, '2018-04-04', '2018-05-09', '0000-00-00', '2323', 458.66, 0.00, 'teste', 'cheque', 'N');
+
+-- --------------------------------------------------------
+
+--
+-- Estrutura da tabela `usuarios`
 --
 
 CREATE TABLE `usuarios` (
@@ -214,7 +244,7 @@ CREATE TABLE `usuarios` (
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 --
--- Dumping data for table `usuarios`
+-- Extraindo dados da tabela `usuarios`
 --
 
 INSERT INTO `usuarios` (`id`, `nome`, `email`, `login`, `senha`, `nivel_acesso_id`, `created`, `modified`) VALUES
@@ -258,6 +288,13 @@ ALTER TABLE `servicos`
   ADD PRIMARY KEY (`id`);
 
 --
+-- Indexes for table `titulos_rec`
+--
+ALTER TABLE `titulos_rec`
+  ADD PRIMARY KEY (`id`),
+  ADD KEY `id_cliente` (`id_cliente`);
+
+--
 -- Indexes for table `usuarios`
 --
 ALTER TABLE `usuarios`
@@ -277,7 +314,7 @@ ALTER TABLE `clientes`
 -- AUTO_INCREMENT for table `logusuarios`
 --
 ALTER TABLE `logusuarios`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=35;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=36;
 
 --
 -- AUTO_INCREMENT for table `nivel_acessos`
@@ -298,10 +335,26 @@ ALTER TABLE `servicos`
   MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=19;
 
 --
+-- AUTO_INCREMENT for table `titulos_rec`
+--
+ALTER TABLE `titulos_rec`
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
+
+--
 -- AUTO_INCREMENT for table `usuarios`
 --
 ALTER TABLE `usuarios`
   MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
+
+--
+-- Constraints for dumped tables
+--
+
+--
+-- Limitadores para a tabela `titulos_rec`
+--
+ALTER TABLE `titulos_rec`
+  ADD CONSTRAINT `titulos_rec_ibfk_1` FOREIGN KEY (`id_cliente`) REFERENCES `clientes` (`id`);
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;

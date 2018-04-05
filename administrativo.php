@@ -49,6 +49,10 @@
 	$pag[34] = "busca_banco.php";
 	$pag[35] = "gera_pdf_os.php";
 	$pag[36] = "executar_sql.php";
+
+	$pag[37] = "listar_titulos.php";
+	$pag[38] = "cad_titulos.php";
+	$pag[39] = "editar_titulos.php";
 	
 	if(!empty($link) && file_exists($pag[$link])){
 		require_once $pag[$link];

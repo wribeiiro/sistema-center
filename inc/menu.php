@@ -66,7 +66,7 @@
                                 </li>
                             </ul>
                         </li>
-                        
+                        <!--
                         <li>
                             <a href="#" class="accordion-heading" data-toggle="collapse" data-target="#submenu4">
                                 <span class="nav-header-primary"><i class="fa fa-wrench fa-fw" style="color: #666666"></i> <b style="font-weight: normal; color: #666666">Serviços </b><b class="caret" style="color: #666666"></b></span>
@@ -86,18 +86,18 @@
                                 </li>
                             </ul>
                         </li>
-                        
+                        -->
                    
                         <li>
                             <a href="#" class="accordion-heading" data-toggle="collapse" data-target="#submenu5">
-                                <span class="nav-header-primary"><i class="fa fa-barcode fa-fw" style="color: #666666"></i> <b style="font-weight: normal; color: #666666">Produtos </b><b class="caret" style="color: #666666"></b></span>
+                                <span class="nav-header-primary"><i class="fa fa-money fa-fw" style="color: #666666"></i> <b style="font-weight: normal; color: #666666">Títulos a Receber </b><b class="caret" style="color: #666666"></b></span>
                             </a>
                             <ul class="nav nav-list collapse" id="submenu5">
                                 <li>
-                                    <a href="administrativo.php?link=32" title="Listar Produtos"><i class="fa fa-list fa-fw"></i>Listar Produtos</a>
+                                    <a href="administrativo.php?link=37"><i class="fa fa-list fa-fw"></i>Listar Títulos</a>
                                 </li>
                                 <li>
-                                    <a href="administrativo.php?link=31" title="Adicionar Produtos"><i class="fa fa-plus fa-fw"></i>Adicionar Produtos</a>
+                                    <a href="administrativo.php?link=38"><i class="fa fa-plus fa-fw"></i>Lançar Título</a>
                                 </li>
                             </ul>
                         </li>
