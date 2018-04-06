@@ -34,10 +34,10 @@
 
 	while ($rs = mysqli_fetch_assoc($result)) {
 
-		$html .= "<b>ID: </b> " . $resultado['id_tit'] . "<br>";
-		$html .= "<b>Data Lançamento: </b> " . $resultado['data_lanc'] . "<br>";
-		$html .= "<b>Data Vencimento: </b> " . $resultado['data_venc'] . "<br>";
-		$html .= "<b>Cliente: </b> ". $resultado['nome'] . "<br>";
+		$html .= "<b>ID: </b> " . $rs['id_tit'] . "<br>";
+		$html .= "<b>Data Lançamento: </b> " . $rs['data_lanc'] . "<br>";
+		$html .= "<b>Data Vencimento: </b> " . $rs['data_venc'] . "<br>";
+		$html .= "<b>Cliente: </b> ". $rs['nome'] . "<br>";
 		//$html .= "<b>Analista Responsável: </b> " . $resultado['login'] . "<br>";
 		///$html .= "<b>Problema: </b> " . $resultado['problema'] . "<br>";
 		//$html .= "<b>Solução: </b> " . $resultado['solucao'] . "<br>";
