@@ -17,6 +17,7 @@
         <div class="row">
 			<div class="col-md-6" style="text-align: left;">
 				<a href="administrativo.php?link=38"><button type='button' class='btn btn-success'><i class="fa fa-plus"></i> Lançar</button></a>
+				<a href="administrativo.php?link=18"><button type='button' class='btn btn-primary'><i class="fa fa-file-pdf-o"></i> Relatórios</button></a>
 			</div>
 		</div>
 		<br>

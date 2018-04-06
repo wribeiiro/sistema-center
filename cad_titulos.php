@@ -42,7 +42,7 @@
                 <div class="col-sm-4">
                     <div class="form-group">
                         <label>Data Lançamento: </label> <span style="color: red; font-weight: bold;"> *</span>
-                        <input type="text" class="form-control date" name="data_lanc" id="data_lanc" placeholder="<?php echo date('d/m/Y') ?>" required="" value="<?php echo date('d-m-Y') ?>">
+                        <input type="text" class="form-control date" name="data_lanc" id="data_lanc" placeholder="<?php echo date('d/m/Y') ?>" required="" value="<?php echo date('d/m/Y') ?>">
                     </div>
                 </div>
                 <div class="col-sm-4">
@@ -69,7 +69,7 @@
                 <div class="col-sm-3">
                     <div class="form-group">
                         <label>Valor Título: </label> <span style="color: red; font-weight: bold;"> *</span>
-                        <input type="text" class="form-control money" name="valor_tit" id="valor_tit" placeholder="0.00">
+                        <input type="text" class="form-control money" name="valor_tit" id="valor_tit" placeholder="0.00" required>
                     </div>
                 </div>
                 <div class="col-sm-3">
@@ -94,6 +94,7 @@
                     <div class="col-sm-4">
                         <button type="submit" class="btn btn-success"><i class="fa fa-plus"></i> Lançar</button>
                         <a href='administrativo.php?link=37'><button type='button' class='btn btn-info'><i class="fa fa-list"></i> Listar</button></a>
+                        <a href="administrativo.php?link=18"><button type='button' class='btn btn-primary'><i class="fa fa-file-pdf-o"></i> Relatórios</button></a>
                     </div>
                 </div>
                 <p style="color: red; float: right;"> Os campos com * são obrigatórios.</p>
