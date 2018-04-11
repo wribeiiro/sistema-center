@@ -24,7 +24,7 @@
 		<div class="row">
 			<div class="col-md-12">
 				<div class="dataTable_wrapper">
-				  	<table class="table table-striped table-bordered table-hover" id="table-titulos">
+				  	<table class="table table-striped table-bordered table-hover" id="table-titulos" style="width: 100%">
 						<thead>
 						 	<tr>
 								<th>ID</th>

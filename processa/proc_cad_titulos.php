@@ -10,10 +10,9 @@
 	$documento   = $_POST["documento"];	
     $forma_pgto  = $_POST["forma_pgto"]; 
 
-	$ndata_lanc  = date('Y-m-d', strtotime(str_replace('/','-', $_POST["data_lanc"])));
+	$ndata_lanc  = date('Y-m-d');
     $ndata_venc  = date('Y-m-d', strtotime(str_replace('/','-', $_POST["data_venc"])));
 	
-    $pago        = $_POST["pago"];
     $valor_tit   = trim(str_replace(',', '', $_POST["valor_tit"]));
     $valor_pago  = trim(str_replace(',', '', $_POST["valor_pago"]));
 
@@ -31,10 +30,12 @@
     
     $observacao  = $_POST["observacao"];
 
-    if (is_null($_POST["data_pgto"]) | $_POST["data_pgto"] == ''):
+	if (is_null($_POST["data_pgto"]) || $_POST["data_pgto"] == ''):
+		$pago  = 'N';
 		$sql   = "INSERT INTO titulos_rec (id_cliente, data_lanc, data_venc, data_pag, num_nota, valor_tit, valor_pago, valor_dif, observacao, forma_pgto, pago) VALUES ('$cliente', '$ndata_lanc', '$ndata_venc' , default, '$documento', '$valor_tit', '$valor_pago', '$valor_dif', '$observacao', '$forma_pgto', '$pago')";
 	else:
 		$ndata_pgto  = date('Y-m-d', strtotime(str_replace('/','-', $_POST["data_pgto"])));
+		$pago  = 'S';
 
 		$sql   = "INSERT INTO titulos_rec (id_cliente, data_lanc, data_venc, data_pag, num_nota, valor_tit, valor_pago, valor_dif, observacao, forma_pgto, pago) VALUES ('$cliente', '$ndata_lanc', '$ndata_venc' , '$ndata_pgto', '$documento', '$valor_tit', '$valor_pago', '$valor_dif', '$observacao', '$forma_pgto', '$pago')";
 	endif;

@@ -30,7 +30,7 @@
 	$pag[15] = "visual_chamados.php";
 	$pag[16] = "editar_chamados.php";
 	$pag[17] = "editar_clientes.php";
-	$pag[18] = "rel_chamados.php";
+	$pag[18] = "rel_titulos.php";
 	$pag[19] = "gera_pdf_chamados.php";
 	$pag[20] = "listar_base_conhecimento.php";
 	$pag[21] = "cad_base_conhecimento.php";

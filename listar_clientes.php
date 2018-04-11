@@ -18,7 +18,7 @@
 		<div class="row">
 			<div class="col-md-12">
 				<div class="dataTable_wrapper">
-				  	<table class="table table-striped table-bordered table-hover" id="tableClient">
+				  	<table class="table table-striped table-bordered table-hover" id="tableClient" style="width: 100%">
 				  	<!--<table class="table table-striped table-bordered table-hover">-->
 						<thead>
 						 	<tr>

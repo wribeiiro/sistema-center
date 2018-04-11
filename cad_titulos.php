@@ -41,12 +41,6 @@
                 </div>
                 <div class="col-sm-4">
                     <div class="form-group">
-                        <label>Data Lançamento: </label> <span style="color: red; font-weight: bold;"> *</span>
-                        <input type="text" class="form-control date" name="data_lanc" id="data_lanc" placeholder="<?php echo date('d/m/Y') ?>" required="" value="<?php echo date('d/m/Y') ?>">
-                    </div>
-                </div>
-                <div class="col-sm-4">
-                    <div class="form-group">
                         <label>Data Vencimento: </label> <span style="color: red; font-weight: bold;"> *</span>
                         <input type="text" class="form-control date" name="data_venc" id="data_venc" placeholder="Ex: 01/01/2020" required="" value="">
                     </div>
@@ -57,34 +51,25 @@
                         <input type="text" class="form-control date" name="data_pgto" id="data_pgto" placeholder="Ex: <?php echo date('d/m/Y') ?>">
                     </div>
                 </div>
-                <div class="col-sm-3">
-                    <div class="form-group">
-                        <label>Pago:</label><span style="color: red; font-weight: bold;"> *</span>
-                        <select class="form-control" name="pago">
-                            <option value="N">Não</option>
-                            <option value="S">Sim</option>
-                        </select>
-                    </div>
-                </div>
-                <div class="col-sm-3">
+                <div class="col-sm-4">
                     <div class="form-group">
                         <label>Valor Título: </label> <span style="color: red; font-weight: bold;"> *</span>
                         <input type="text" class="form-control money" name="valor_tit" id="valor_tit" placeholder="0.00" required>
                     </div>
                 </div>
-                <div class="col-sm-3">
+                <div class="col-sm-4">
                     <div class="form-group">
                         <label>Valor Pago: </label>
                         <input type="text" class="form-control money" name="valor_pago" id="valor_pago" placeholder="0.00" onchange="diferenca()">
                     </div>
                 </div>
-                <div class="col-sm-3">
+                <div class="col-sm-4">
                     <div class="form-group">
                         <label>Valor em Aberto: </label>
                         <input type="text" class="form-control money" name="valor_dif" id="valor_dif" placeholder="0.00">
                     </div>
                 </div>						
-                <div class="col-sm-12">
+                <div class="col-sm-4">
                     <div class="form-group">
                         <label>Observação: </label>
                         <textarea class="form-control" name="observacao" rows="5" placeholder="Observações do cliente"></textarea>
@@ -102,7 +87,7 @@
         </div>
 	</div>
 </div> 
-<script>
+<script> 
     
     function diferenca() {
          
