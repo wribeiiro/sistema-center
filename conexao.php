@@ -5,7 +5,7 @@
  
 	$host = 'localhost';
 	$user = 'root';
-	$pass = '1';
+	$pass = '';
 	$db   = 'sistema-center';
 
 	$con = mysqli_connect($host, $user, $pass, $db) or die ("erro ao conectar com banco") . print mysqli_error();
