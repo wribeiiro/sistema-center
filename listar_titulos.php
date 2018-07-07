@@ -2,7 +2,7 @@
 
     $sql = "SELECT  a.data_lanc, a.data_venc, a.id AS id_tit, a.id_cliente, a.pago, a.valor_tit, b.id, b.nome
     FROM 
-        titulos_rec a
+        contas_pr a
     INNER JOIN 
         clientes b on (b.id = a.id_cliente)";
     $resultado = mysqli_query($con, $sql);
@@ -11,7 +11,7 @@
     <div id="page-wrapper">
         <div class="row">
             <div class="col-lg-12">
-                <h1 class="page-header">Lista de Títulos a Receber</h1>
+                <h1 class="page-header">Contas a Pagar \ Receber</h1>
             </div>
         </div>
         <div class="row">
@@ -28,35 +28,39 @@
 						<thead>
 						 	<tr>
 								<th>ID</th>
-								<th>Nome</th>
-								<th>Data Lanc</th>
-								<th>Data Venc</th>
-                                <th>Valor Tit.</th>
-                                <th>Pago</th>
-								<th>Ações</th>
+								<th>NOME</th>
+								<th>LANÇAMENTO</th>
+								<th>VENCIMENTO</th>
+                                <th>VALOR</th>
+                                <th>PAGO</th>
+								<th>AÇÕES</th>
 						  	</tr>
 						</thead>
 						<tbody>
 							<?php 
 								while($linhas = mysqli_fetch_array($resultado)){
-									$data_lanc   = strtotime($linhas['data_lanc']);
-									$ndata_lanc  = date('d/m/Y', $data_lanc);
+									
+									$data_lanc  = date('d/m/Y', strtotime($linhas['data_lanc']));
+									$data_venc  = date('d/m/Y', strtotime($linhas['data_venc']));
 
-									$data_venc   = strtotime($linhas['data_venc']);
-									$ndata_venc  = date('d/m/Y', $data_venc);
+									if($linhas['pago'] == 'S') {
+										$linhas['pago'] = 'SIM';
+									} else {
+										$linhas['pago'] = 'NÃO';
+									}
 
 									echo "<tr>";
                                         echo "<td>".$linhas['id_tit']."</td>";
-                                        echo "<td>".ucfirst(strtolower($linhas['nome']))."</td>";
-                                        echo "<td>".$ndata_lanc."</td>";
-                                        echo "<td>".$ndata_venc."</td>";
-                                        echo "<td>".$linhas['valor_tit']."</td>";
+                                        echo "<td>".strtoupper($linhas['nome'])."</td>";
+                                        echo "<td>".$data_lanc."</td>";
+										echo "<td>".$data_venc."</td>";
+										echo "<td>". number_format($linhas['valor_tit'], 2, '.', ',')  ."</td>";
                                         echo "<td>".$linhas['pago']."</td>";
 										?>
 										<td> 
-											<a href='administrativo.php?link=39&id=<?php echo $linhas['id_tit']; ?>' title='Editar'><button type="button" class="btn btn-primary btn-sm">Editar</button></a>
+											<a href='administrativo.php?link=39&id=<?php echo $linhas['id_tit']; ?>' title='Editar'><button type="button" class="btn btn-primary btn-sm">EDITAR</button></a>
 
-											<a href='processa/proc_apagar_titulos.php?id=<?php echo $linhas['id_tit']; ?>' title='Excluir'><button type="button" class="btn btn-danger btn-sm">Excluir</button></a>
+											<a href='processa/proc_apagar_titulos.php?id=<?php echo $linhas['id_tit']; ?>' title='Excluir'><button type="button" class="btn btn-danger btn-sm">EXCLUIR</button></a>
                                         </td>
 										<?php
 									echo "</tr>";

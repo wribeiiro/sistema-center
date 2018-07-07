@@ -1,11 +1,11 @@
 <?php 
-    $sql   = "SELECT id, nome, situacao FROM clientes ORDER BY nome";
+    $sql   = "SELECT id, nome FROM clientes ORDER BY nome";
 	$query = mysqli_query($con, $sql);
 ?>
 <div id="page-wrapper">
     <div class="row">
         <div class="col-lg-12">
-            <h1 class="page-header">Relatórios Títulos</h1>
+            <h1 class="page-header">Relatório Contas Pagar / Receber</h1>
         </div>
     </div>
   	<div class="row">
@@ -16,7 +16,7 @@
                 		<legend>Fluxo de caixa</legend>
                 		<div class="col-md-4 col-sm-6 col-lg-4 col-xs-12 col-sm-6 col-lg-4 col-xs-12">
                 			<?php 
-	                			$sql1 = "SELECT YEAR(data_lanc) as ano, MONTH(data_lanc) as mes, SUM(valor_pago) AS total FROM titulos_rec WHERE YEAR(data_lanc) AND MONTH(data_lanc) = 01 AND pago = 'S' GROUP BY ano, mes";
+	                			$sql1 = "SELECT YEAR(data_lanc) as ano, MONTH(data_lanc) as mes, SUM(valor_pago) AS total FROM contas_pr WHERE YEAR(data_lanc) AND MONTH(data_lanc) = 01 AND pago = 'S' GROUP BY ano, mes";
 								$query1 = mysqli_query($con, $sql1);
 								$exe    = mysqli_fetch_assoc($query1);
 	                		?>
@@ -28,7 +28,7 @@
 							</div>
 
 							<?php 
-	                			$sql1 = "SELECT YEAR(data_lanc) as ano, MONTH(data_lanc) as mes, SUM(valor_pago) AS total FROM titulos_rec WHERE YEAR(data_lanc) AND MONTH(data_lanc) = 02 AND pago = 'S' GROUP BY ano, mes";
+	                			$sql1 = "SELECT YEAR(data_lanc) as ano, MONTH(data_lanc) as mes, SUM(valor_pago) AS total FROM contas_pr WHERE YEAR(data_lanc) AND MONTH(data_lanc) = 02 AND pago = 'S' GROUP BY ano, mes";
 								$query1 = mysqli_query($con, $sql1);
 								$exe    = mysqli_fetch_assoc($query1);
 	                		?>	
@@ -40,7 +40,7 @@
 							</div>	
 
 							<?php 
-	                			$sql1 = "SELECT YEAR(data_lanc) as ano, MONTH(data_lanc) as mes, SUM(valor_pago) AS total FROM titulos_rec WHERE YEAR(data_lanc) AND MONTH(data_lanc) = 03 AND pago = 'S' GROUP BY ano, mes";
+	                			$sql1 = "SELECT YEAR(data_lanc) as ano, MONTH(data_lanc) as mes, SUM(valor_pago) AS total FROM contas_pr WHERE YEAR(data_lanc) AND MONTH(data_lanc) = 03 AND pago = 'S' GROUP BY ano, mes";
 								$query1 = mysqli_query($con, $sql1);
 								$exe    = mysqli_fetch_assoc($query1);
 	                		?>
@@ -52,7 +52,7 @@
 							</div>
 
 							<?php 
-	                			$sql1 = "SELECT YEAR(data_lanc) as ano, MONTH(data_lanc) as mes, SUM(valor_pago) AS total FROM titulos_rec WHERE YEAR(data_lanc) AND MONTH(data_lanc) = 04 AND pago = 'S' GROUP BY ano, mes";
+	                			$sql1 = "SELECT YEAR(data_lanc) as ano, MONTH(data_lanc) as mes, SUM(valor_pago) AS total FROM contas_pr WHERE YEAR(data_lanc) AND MONTH(data_lanc) = 04 AND pago = 'S' GROUP BY ano, mes";
 								$query1 = mysqli_query($con, $sql1);
 								$exe    = mysqli_fetch_assoc($query1);
 
@@ -71,7 +71,7 @@
                 		<div class="col-md-4 col-sm-6 col-lg-4 col-xs-12">    
 
                 			<?php 
-	                			$sql1 = "SELECT YEAR(data_lanc) as ano, MONTH(data_lanc) as mes, SUM(valor_pago) AS total FROM titulos_rec WHERE YEAR(data_lanc) AND MONTH(data_lanc) = 05 AND pago = 'S' GROUP BY ano, mes";
+	                			$sql1 = "SELECT YEAR(data_lanc) as ano, MONTH(data_lanc) as mes, SUM(valor_pago) AS total FROM contas_pr WHERE YEAR(data_lanc) AND MONTH(data_lanc) = 05 AND pago = 'S' GROUP BY ano, mes";
 								$query1 = mysqli_query($con, $sql1);
 								$exe    = mysqli_fetch_assoc($query1);
 
@@ -87,7 +87,7 @@
 							</div>	
                 		
                 			<?php 
-	                			$sql1 = "SELECT YEAR(data_lanc) as ano, MONTH(data_lanc) as mes, SUM(valor_pago) AS total FROM titulos_rec WHERE YEAR(data_lanc) AND MONTH(data_lanc) = 06 AND pago = 'S' GROUP BY ano, mes";
+	                			$sql1 = "SELECT YEAR(data_lanc) as ano, MONTH(data_lanc) as mes, SUM(valor_pago) AS total FROM contas_pr WHERE YEAR(data_lanc) AND MONTH(data_lanc) = 06 AND pago = 'S' GROUP BY ano, mes";
 								$query1 = mysqli_query($con, $sql1);
 								$exe    = mysqli_fetch_assoc($query1);
 
@@ -103,7 +103,7 @@
 							</div>	
 
 							<?php 
-	                			$sql1 = "SELECT YEAR(data_lanc) as ano, MONTH(data_lanc) as mes, SUM(valor_pago) AS total FROM titulos_rec WHERE YEAR(data_lanc) AND MONTH(data_lanc) = 07 AND pago = 'S' GROUP BY ano, mes";
+	                			$sql1 = "SELECT YEAR(data_lanc) as ano, MONTH(data_lanc) as mes, SUM(valor_pago) AS total FROM contas_pr WHERE YEAR(data_lanc) AND MONTH(data_lanc) = 07 AND pago = 'S' GROUP BY ano, mes";
 								$query1 = mysqli_query($con, $sql1);
 								$exe    = mysqli_fetch_assoc($query1);
 
@@ -119,7 +119,7 @@
 							</div>
 
 							<?php 
-	                			$sql1 = "SELECT YEAR(data_lanc) as ano, MONTH(data_lanc) as mes, SUM(valor_pago) AS total FROM titulos_rec WHERE YEAR(data_lanc) AND MONTH(data_lanc) = 08 AND pago = 'S' GROUP BY ano, mes";
+	                			$sql1 = "SELECT YEAR(data_lanc) as ano, MONTH(data_lanc) as mes, SUM(valor_pago) AS total FROM contas_pr WHERE YEAR(data_lanc) AND MONTH(data_lanc) = 08 AND pago = 'S' GROUP BY ano, mes";
 								$query1 = mysqli_query($con, $sql1);
 								$exe    = mysqli_fetch_assoc($query1);
 
@@ -137,7 +137,7 @@
                 		
                 		<div class="col-md-4 col-sm-6 col-lg-4 col-xs-12">
                 			<?php 
-	                			$sql1 = "SELECT YEAR(data_lanc) as ano, MONTH(data_lanc) as mes, SUM(valor_pago) AS total FROM titulos_rec WHERE YEAR(data_lanc) AND MONTH(data_lanc) = 09 AND pago = 'S' GROUP BY ano, mes";
+	                			$sql1 = "SELECT YEAR(data_lanc) as ano, MONTH(data_lanc) as mes, SUM(valor_pago) AS total FROM contas_pr WHERE YEAR(data_lanc) AND MONTH(data_lanc) = 09 AND pago = 'S' GROUP BY ano, mes";
 								$query1 = mysqli_query($con, $sql1);
 								$exe    = mysqli_fetch_assoc($query1);
 
@@ -153,7 +153,7 @@
 							</div>	
                 			
                 			<?php 
-	                			$sql1 = "SELECT YEAR(data_lanc) as ano, MONTH(data_lanc) as mes, SUM(valor_pago) AS total FROM titulos_rec WHERE YEAR(data_lanc) AND MONTH(data_lanc) = 10 AND pago = 'S' GROUP BY ano, mes";
+	                			$sql1 = "SELECT YEAR(data_lanc) as ano, MONTH(data_lanc) as mes, SUM(valor_pago) AS total FROM contas_pr WHERE YEAR(data_lanc) AND MONTH(data_lanc) = 10 AND pago = 'S' GROUP BY ano, mes";
 								$query1 = mysqli_query($con, $sql1);
 								$exe    = mysqli_fetch_assoc($query1);
 
@@ -169,7 +169,7 @@
 							</div>	
                 			
                 			<?php 
-	                			$sql1 = "SELECT YEAR(data_lanc) as ano, MONTH(data_lanc) as mes, SUM(valor_pago) AS total FROM titulos_rec WHERE YEAR(data_lanc) AND MONTH(data_lanc) = 11 AND pago = 'S' GROUP BY ano, mes";
+	                			$sql1 = "SELECT YEAR(data_lanc) as ano, MONTH(data_lanc) as mes, SUM(valor_pago) AS total FROM contas_pr WHERE YEAR(data_lanc) AND MONTH(data_lanc) = 11 AND pago = 'S' GROUP BY ano, mes";
 								$query1 = mysqli_query($con, $sql1);
 								$exe    = mysqli_fetch_assoc($query1);
 
@@ -185,7 +185,7 @@
 							</div>	
                 		
                 			<?php 
-	                			$sql1 = "SELECT YEAR(data_lanc) as ano, MONTH(data_lanc) as mes, SUM(valor_pago) AS total FROM titulos_rec WHERE YEAR(data_lanc) AND MONTH(data_lanc) = 12 AND pago = 'S' GROUP BY ano, mes";
+	                			$sql1 = "SELECT YEAR(data_lanc) as ano, MONTH(data_lanc) as mes, SUM(valor_pago) AS total FROM contas_pr WHERE YEAR(data_lanc) AND MONTH(data_lanc) = 12 AND pago = 'S' GROUP BY ano, mes";
 								$query1 = mysqli_query($con, $sql1);
 								$exe    = mysqli_fetch_assoc($query1);
 
@@ -212,7 +212,7 @@
 							<legend>Filtros</legend>
 							<div class="col-sm-12"> 
 								<div class="form-group">
-									<label>Cliente: </label>
+									<label>Cliente / Fornecedor: </label>
 							  		<select class="js-example-basic-single form-control" id="cliente" name="cliente">
 							  			<option value="T">Todos</option>
 			                            <?php					  		
@@ -225,12 +225,21 @@
 			                        </select>
 								</div>
 							</div>
-							<div class="col-sm-12"> 
+							<div class="col-sm-6"> 
+								<div class="form-group">
+									<label>Tipo Conta: </label>
+							  		<select class="form-control" id="tipoc" name="tipoc">
+							  			<option value="P">A Pagar</option>
+										<option value="R">A Receber</option>
+			                        </select>
+								</div>
+							</div>
+							<div class="col-sm-6"> 
 								<div class="form-group">
 									<label>Situação: </label>
-							  		<select class="js-example-basic-single form-control" id="situacao" name="situacao">
-							  			<option value="N">A Receber</option>
-										<option value="S">Recebidos</option>
+							  		<select class="form-control" id="situacao" name="situacao">
+							  			<option value="S">Pagos</option>
+										<option value="N">Em aberto</option>
 			                        </select>
 								</div>
 							</div>

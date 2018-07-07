@@ -10,7 +10,7 @@
 <div id="page-wrapper">
     <div class="row">
         <div class="col-lg-12">
-            <h1 class="page-header">Editar Clientes</h1>
+            <h1 class="page-header">Editar Cliente / Fornecedor</h1>
         </div> 
     </div>
   	<div class="row"> 
@@ -60,27 +60,7 @@
 					  		<input type="text" class="form-control" name="cnpj" id="cnpj" placeholder="Informe o cpf ou cnpj" value="<?php echo $resultado['cnpj']; ?>">
 						</div>
 				  	</div>
-				  	<div class="col-sm-4">
-						<div class="form-group">
-						    <label>Situação: </label><span style="color: red; font-weight: bold;"> *</span>
-						  	<select class="form-control" name="situacao">
-								<option value="1"
-								<?php
-									if( $resultado['situacao'] == 1){
-										echo 'selected';
-									}
-								?>
-								>Em dia</option>
-								<option value="2"
-								<?php
-									if( $resultado['situacao'] == 2){
-										echo 'selected';
-									}
-								?>
-								>Devendo</option>
-							</select>
-						</div>
-					</div>
+
 					<div class="col-sm-4">
 						<div class="form-group">
 						    <label>Data do cadastro:</label><span style="color: red; font-weight: bold;"> *</span>
@@ -89,57 +69,11 @@
 					</div>
 					<div class="col-sm-4">
 						<div class="form-group">
-						    <label>Contato: </label>
-						    <input type="text" class="form-control" name="contato" id="contato" placeholder="Contato" value="<?php echo $resultado['contato']; ?>">
-						</div>
-					</div>
-					<div class="col-sm-4">
-						<div class="form-group">
 						    <label>E-mail: </label>
 						    <input type="email" class="form-control" name="email" id="email" placeholder="E-mail do Cliente" value="<?php echo $resultado['email'] ?>">
 						</div>
-					</div>
-					<div class="col-sm-4">
-						<div class="form-group">
-						    <label>Valor Total: </label>
-						    <input type="text" class="form-control money" name="valor_total" id="valor_total" placeholder="Valor total em aberto" value="<?php echo $resultado['valor_total'] ?>">
-						</div>
-					</div>
-					<div class="col-sm-4">
-						<div class="form-group">
-						    <label>Tipo Serviço: </label><span style="color: red; font-weight: bold;"> *</span>
-						  	<select class="form-control" name="tipo_servico">
-								<option value="1"
-								<?php
-									if( $resultado['tipo_servico'] == 1){
-										echo 'selected';
-									}
-								?>
-								>Acompanhamento</option>
-								<option value="2"
-								<?php
-									if( $resultado['tipo_servico'] == 2){
-										echo 'selected';
-									}
-								?>
-								>Studios</option>
-								<option value="3"
-								<?php
-									if( $resultado['tipo_servico'] == 3){
-										echo 'selected';
-									}
-								?>
-								>Outros Serviços</option>
-							</select>
-						</div>
-					</div>
-					<div class="col-sm-4">
-						<div class="form-group">
-						    <label>Endereço: </label>
-						  	<textarea class="form-control" name="senhas" rows="7" placeholder="Endereço do Cliente"><?php echo $resultado['senhas']; ?></textarea>
-						</div>
 					</div>					
-					<div class="col-sm-4">
+					<div class="col-sm-12">
 						<div class="form-group">
 						    <label>Observação: </label>
 						  	<textarea class="form-control" name="observacao" rows="7" placeholder="Observações do cliente"><?php echo $resultado['observacao'] ?></textarea>

@@ -6,7 +6,7 @@
 <!DOCTYPE html> 
 <html lang="pt-br">
 <head>
-    <title>Área Restrita - Autenticação</title> 
+    <title>Finanças - Autenticação</title> 
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
@@ -44,12 +44,12 @@
             <div class="col-md-5 col-lg-4  col-lg-offset-4">
                 <div class="login-container">
                     <div class="login-logo" style="text-align: center;">
-                        <i class="fa fa-tags fa-5x" style="color: #fff"></i>
+                        <i class="fa fa-money fa-5x" style="color: #e3e3e3"></i>
                     </div>
                     <br>
-                    <div class="login-panel panel panel-primary">
+                    <div class="login-panel panel panel-default">
                         <div class="panel-heading"> 
-                            <h3 class="panel-title" style="text-align: center;">Autenticação - Sistema </h3>
+                            <h3 class="panel-title" style="text-align: center;">Login - Contas a Pagar / Receber </h3>
                         </div>
                         <div class="panel-body">
                             <form class="form-signin" method="POST" action="valida_login.php">
@@ -64,10 +64,9 @@
                                         <input type="password" class="form-control" placeholder="Digite sua senha.." name="senha" required autofocus>
                                         <span class="glyphicon glyphicon-lock form-control-feedback"></span>
                                     </div>
-
-                                    <a class="text-center text-danger" href="recupera_senha.php" style="float: right; font-size: 12px">Esqueceu sua senha?</a>
-                                    <br><br>
-                                    <button class="btn btn-primary btn-block mb-10" type="submit" style="background-color: #027CC1; border: solid 1px #027CC1"><i class="fa fa-check"></i> Entrar</button>
+       
+                                    <br>
+                                    <button class="btn btn-success btn-block mb-10" type="submit" ><i class="fa fa-send"></i> Entrar</button>
                                 </fieldset>
                             </form>
                             <p class="text-center text-danger">

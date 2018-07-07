@@ -55,49 +55,28 @@
                         </li>
                         <li>
                             <a href="#" class="accordion-heading" data-toggle="collapse" data-target="#submenu3">
-                                <span class="nav-header-primary"><i class="fa fa-user fa-fw" style="color: #666666"></i> <b style="font-weight: normal; color: #666666">Clientes </b><b class="caret" style="color: #666666"></b></span>
+                                <span class="nav-header-primary"><i class="fa fa-user fa-fw" style="color: #666666"></i> <b style="font-weight: normal; color: #666666">Clientes / Fornecedores </b><b class="caret" style="color: #666666"></b></span>
                             </a>
                             <ul class="nav nav-list collapse" id="submenu3">
                                 <li>
-                                    <a href="administrativo.php?link=13" title="Listar Clientes"><i class="fa fa-list fa-fw"></i>Listar Clientes</a>
+                                    <a href="administrativo.php?link=13" title="Listar Clientes"><i class="fa fa-list fa-fw"></i>Listar Clientes / Fornecedores</a>
                                 </li>
                                 <li>
-                                    <a href="administrativo.php?link=12" title="Cadastrar Clientes"><i class="fa fa-plus fa-fw"></i>Cadastrar Clientes</a>
+                                    <a href="administrativo.php?link=12" title="Cadastrar Clientes"><i class="fa fa-plus fa-fw"></i>Cadastrar Clientes / Fornecedores</a>
                                 </li>
                             </ul>
                         </li>
-                        <!--
-                        <li>
-                            <a href="#" class="accordion-heading" data-toggle="collapse" data-target="#submenu4">
-                                <span class="nav-header-primary"><i class="fa fa-wrench fa-fw" style="color: #666666"></i> <b style="font-weight: normal; color: #666666">Serviços </b><b class="caret" style="color: #666666"></b></span>
-                            </a>
-                            <ul class="nav nav-list collapse" id="submenu4">
-                                <li>
-                                    <a href="administrativo.php?link=25" title="Listar Servicos"><i class="fa fa-list fa-fw"></i>Listar Serviços</a>
-                                </li>
-                                <li>
-                                    <a href="administrativo.php?link=29" title="Listar OS"><i class="fa fa-list fa-fw"></i>Listar OS</a>
-                                </li>
-                                <li>
-                                    <a href="administrativo.php?link=24" title="Cadastrar Servicos"><i class="fa fa-plus fa-fw"></i>Cadastrar Serviços</a>
-                                </li>
-                                <li>
-                                    <a href="administrativo.php?link=28" title="Cadastrar OS"><i class="fa fa-plus fa-fw"></i>Cadastrar OS</a>
-                                </li>
-                            </ul>
-                        </li>
-                        -->
                    
                         <li>
                             <a href="#" class="accordion-heading" data-toggle="collapse" data-target="#submenu5">
-                                <span class="nav-header-primary"><i class="fa fa-money fa-fw" style="color: #666666"></i> <b style="font-weight: normal; color: #666666">Títulos a Receber </b><b class="caret" style="color: #666666"></b></span>
+                                <span class="nav-header-primary"><i class="fa fa-money fa-fw" style="color: #666666"></i> <b style="font-weight: normal; color: #666666">Contas Receber / Pagar </b><b class="caret" style="color: #666666"></b></span>
                             </a>
                             <ul class="nav nav-list collapse" id="submenu5">
                                 <li>
-                                    <a href="administrativo.php?link=37"><i class="fa fa-list fa-fw"></i>Listar Títulos</a>
+                                    <a href="administrativo.php?link=37"><i class="fa fa-list fa-fw"></i>Listar Contas</a>
                                 </li>
                                 <li>
-                                    <a href="administrativo.php?link=38"><i class="fa fa-plus fa-fw"></i>Lançar Título</a>
+                                    <a href="administrativo.php?link=38"><i class="fa fa-plus fa-fw"></i>Lançar Conta</a>
                                 </li>
                             </ul>
                         </li>
@@ -119,9 +98,6 @@
                                     </li>
                                     <li>
                                         <a href=\"administrativo.php?link=3\" title=\"Cadastrar Usuarios\"><i class=\"fa fa-plus fa-fw\"></i>Cadastrar Usuários</a>
-                                    </li>
-                                    <li>
-                                        <a href=\"administrativo.php?link=6\"><i class=\"fa fa-lock fa-fw\"></i> Nível Acesso</a>
                                     </li>
                                 </ul>";
                             }

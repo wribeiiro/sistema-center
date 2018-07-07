@@ -6,12 +6,12 @@
     <div id="page-wrapper">
         <div class="row">
             <div class="col-lg-12">
-                <h1 class="page-header">Lista de Clientes</h1>
+                <h1 class="page-header">Clientes / Fornecedores</h1>
             </div>
         </div>
         <div class="row">
 			<div class="col-md-8" style="text-align: left;">
-				<a href="administrativo.php?link=12"><button type='button' class='btn btn-success'><i class="fa fa-pencil"></i> Cadastrar</button></a>
+				<a href="administrativo.php?link=12"><button type='button' class='btn btn-success'><i class="fa fa-pencil"></i> CADASTRAR</button></a>
 			</div>
 		</div>
 		<br>
@@ -23,35 +23,26 @@
 						<thead>
 						 	<tr>
 								<th>ID</th>
-								<th>Nome</th> 
-								<th>Telefone</th>
-								<th>Contato</th>
-								<th>Situação</th>
-								<th>Ações</th>
+								<th>CLIENTE / FORNECEDOR</th> 
+								<th>TELEFONE</th>
+								<th>E-MAIL</th>
+								<th>AÇÕES</th>
 						  	</tr>
 						</thead>
 						<tbody>
 							<?php 
 								while($linhas = mysqli_fetch_array($resultado)){
-									if ($linhas['situacao']=='1') {
-										$linhas['situacao']='Em dia';
-									}else {
-										$linhas['situacao']='Devendo';
-									}
-	
+
 									echo "<tr>";
 										echo "<td>".$linhas['id']."</td>";
-										echo "<td>".$linhas['nome']."</td>";
+										echo "<td>".strtoupper($linhas['nome'])."</td>";
 										echo "<td>".$linhas['telefone']."</td>";
-										echo "<td>" .substr($linhas['contato'], 0,20)."</td>";
-										echo "<td>".$linhas['situacao']."</td>";
+										echo "<td>".$linhas['email']."</td>";
 										?>
 										<td> 
-										<a href='administrativo.php?link=14&id=<?php echo $linhas['id']; ?>' data-toggle='tooltip' title='Visualizar'><button type="button" class="btn btn-primary btn-circle"><i class="fa fa-search"></i></button></a>
+										<a href='administrativo.php?link=17&id=<?php echo $linhas['id']; ?>' data-toggle='tooltip' title='EDITAR'><button type="button" class="btn btn-info btn-circle"><i class="fa fa-pencil"></i></button></a>
 										
-										<a href='administrativo.php?link=17&id=<?php echo $linhas['id']; ?>' data-toggle='tooltip' title='Editar'><button type="button" class="btn btn-info btn-circle"><i class="fa fa-pencil"></i></button></a>
-										
-										<a href='processa/proc_apagar_clientes.php?id=<?php echo $linhas['id']; ?>' data-toggle='tooltip' title='Excluir'><button type="button" class="btn btn-warning btn-circle"><i class="fa fa-times"></i></button></a>
+										<a href='processa/proc_apagar_clientes.php?id=<?php echo $linhas['id']; ?>' data-toggle='tooltip' title='EXCLUIR'><button type="button" class="btn btn-warning btn-circle"><i class="fa fa-times"></i></button></a>
 										
 										<?php
 									echo "</tr>";

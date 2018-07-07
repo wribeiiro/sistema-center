@@ -7,8 +7,8 @@
 	include_once("../conexao.php");
 
 	$cliente 	 = $_POST["cliente"];
+	$tipoc       = $_POST["tipoc"];
 	$documento   = $_POST["documento"];	
-    $forma_pgto  = $_POST["forma_pgto"]; 
 
 	$ndata_lanc  = date('Y-m-d');
     $ndata_venc  = date('Y-m-d', strtotime(str_replace('/','-', $_POST["data_venc"])));
@@ -28,16 +28,14 @@
 		$valor_dif = trim(str_replace(',', '', $_POST["valor_dif"]));	
 	endif;
     
-    $observacao  = $_POST["observacao"];
-
 	if (is_null($_POST["data_pgto"]) || $_POST["data_pgto"] == ''):
 		$pago  = 'N';
-		$sql   = "INSERT INTO titulos_rec (id_cliente, data_lanc, data_venc, data_pag, num_nota, valor_tit, valor_pago, valor_dif, observacao, forma_pgto, pago) VALUES ('$cliente', '$ndata_lanc', '$ndata_venc' , default, '$documento', '$valor_tit', '$valor_pago', '$valor_dif', '$observacao', '$forma_pgto', '$pago')";
+		$sql   = "INSERT INTO titulos_rec (id_cliente, tipo_conta, data_lanc, data_venc, data_pag, num_nota, valor_tit, valor_pago, valor_dif, pago) VALUES ('$cliente', '$tipoc',  '$ndata_lanc', '$ndata_venc' , default, '$documento', '$valor_tit', '$valor_pago', '$valor_dif', '$pago')";
 	else:
 		$ndata_pgto  = date('Y-m-d', strtotime(str_replace('/','-', $_POST["data_pgto"])));
 		$pago  = 'S';
 
-		$sql   = "INSERT INTO titulos_rec (id_cliente, data_lanc, data_venc, data_pag, num_nota, valor_tit, valor_pago, valor_dif, observacao, forma_pgto, pago) VALUES ('$cliente', '$ndata_lanc', '$ndata_venc' , '$ndata_pgto', '$documento', '$valor_tit', '$valor_pago', '$valor_dif', '$observacao', '$forma_pgto', '$pago')";
+		$sql   = "INSERT INTO titulos_rec (id_cliente, tipo_conta, data_lanc, data_venc, data_pag, num_nota, valor_tit, valor_pago, valor_dif, pago) VALUES ('$cliente', '$tipoc', '$ndata_lanc', '$ndata_venc' , '$ndata_pgto', '$documento', '$valor_tit', '$valor_pago', '$valor_dif', '$pago')";
 	endif;
    
 	

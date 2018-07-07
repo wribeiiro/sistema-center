@@ -13,7 +13,7 @@
 		    <meta name="author" content="Wellisson Ribeiro">
 		    <link rel="icon" href="imagens/logo_support.png">
 
-		    <title>Administrativo - Controle</title>
+		    <title>Administrativo - Contas</title>
 
 
 		    <link href="https://fonts.googleapis.com/css?family=Oswald" rel="stylesheet">
@@ -29,10 +29,10 @@
 			<link href="bower_components/metisMenu/dist/metisMenu.min.css" rel="stylesheet">
 
 			<!-- Timeline CSS -->
-			<link href="dist/css/timeline.css" rel="stylesheet">
+			<link href="bower_components/dist/css/timeline.css" rel="stylesheet">
 
 			<!-- Custom CSS -->
-			<link href="dist/css/sb-admin-2.css" rel="stylesheet">
+			<link href="bower_components/dist/css/sb-admin-2.css" rel="stylesheet">
 
 			<!-- Morris Charts CSS -->
 			<link href="bower_components/morrisjs/morris.css" rel="stylesheet">
@@ -46,7 +46,7 @@
 			<!-- sweet alert css 
 			<link rel="stylesheet" href="bower_components/sweetalert2/dist/sweetalert2.min.css">
 			-->
-		    <link href="css/theme.css" rel="stylesheet">
+		    <link href="bower_components/css/theme.css" rel="stylesheet">
 
 		    <!--<script src="js/ie-emulation-modes-warning.js"></script>-->
 

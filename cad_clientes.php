@@ -30,34 +30,19 @@
 					<div class="col-sm-4">
 						<div class="form-group">
 						    <label>Telefone: </label> <span style="color: red; font-weight: bold;"> *</span>
-							<input type="text" class="form-control" name="telefone" id="telefone" placeholder="Informe o telefone" required="">
+							<input type="text" class="form-control" name="telefone" id="telefone" placeholder="Informe o telefone">
 						</div>
 					</div>
 					<div class="col-sm-4">
 						<div class="form-group">
 						    <label>CPF/CNPJ: </label> <span style="color: red; font-weight: bold;"> *</span>
-							<input type="text" class="form-control" name="cnpj" id="cnpj" class="texto-cpf-cnpj" placeholder="Informe o cpf ou cnpj" required="">
-						</div>
-					</div>
-					<div class="col-sm-4">
-						<div class="form-group">
-						    <label>Situação:</label><span style="color: red; font-weight: bold;"> *</span>
-						  	<select class="form-control" name="situacao">
-								<option value="1">Em dia</option>
-								<option value="2">Divida</option>
-							</select>
+							<input type="text" class="form-control" name="cnpj" id="cnpj" class="texto-cpf-cnpj" placeholder="Informe o cpf ou cnpj">
 						</div>
 					</div>
 					<div class="col-sm-4">
 						<div class="form-group">
 						    <label>Data do cadastro:</label><span style="color: red; font-weight: bold;"> *</span>
-						  	<input type="text" class="form-control calendario" name="data_cadastro" id="data_cadastro" value="<?php echo date('Y/m/d') ?>">
-						</div>
-					</div>
-					<div class="col-sm-4">
-						<div class="form-group">
-						    <label>Contato: </label>
-						    <input type="text" class="form-control" name="contato" id="contato" placeholder="Contato">
+						  	<input type="text" class="form-control calendario" name="data_cadastro" id="data_cadastro" value="<?php echo date('Y-m-d H:m:s') ?>">
 						</div>
 					</div>
 					<div class="col-sm-4">
@@ -65,33 +50,11 @@
 						    <label>E-mail: </label>
 						    <input type="email" class="form-control" name="email" id="email" placeholder="E-mail do Cliente">
 						</div>
-					</div>
-					<div class="col-sm-4">
-						<div class="form-group">
-						    <label>Valor Total: </label>
-						    <input type="text" class="form-control money" name="valor_total" id="valor_total" placeholder="0.00">
-						</div>
-					</div>
-					<div class="col-sm-4">
-						<div class="form-group">
-						    <label>Tipo Serviço: </label><span style="color: red; font-weight: bold;"> *</span>
-						  	<select class="form-control" name="tipo_servico">
-								<option value="1">Acompanhamento</option>
-								<option value="2">Studios</option>
-								<option value="3">Outros Serviços</option>
-							</select>
-						</div>
-					</div>
-					<div class="col-sm-4">
-						<div class="form-group">
-						    <label>Endereço: </label>
-						  	<textarea class="form-control" name="senhas" rows="7" placeholder="Endereço do Cliente"></textarea>
-						</div>
 					</div>		
-					<div class="col-sm-4">
+					<div class="col-sm-12">
 						<div class="form-group">
 						    <label>Observação: </label>
-						  	<textarea class="form-control" name="observacao" rows="7" placeholder="Observações do cliente"></textarea>
+						  	<textarea class="form-control" name="observacao" rows="7" placeholder="Observações e outras informações"></textarea>
 						</div>
 					</div>
 					<div class="form-group">
