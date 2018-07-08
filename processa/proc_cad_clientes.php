@@ -19,10 +19,11 @@
 	$query = mysqli_query($con, $sql);
 
 	if (mysqli_affected_rows($con) > 0 ){
-		echo '<script>alert("Cliente cadastrado com Sucesso! :)");</script>';
+		//echo '<script>alert("Cliente cadastrado com Sucesso! :)");</script>';
 		echo '<script>location.href="../administrativo.php?link=13";</script>';
 	} else {
-		echo '<script>alert("Desculpe, ocorreu um erro ao cadastrar! :(");</script>';
+		//echo $sql;	
+		//echo '<script>alert("Desculpe, ocorreu um erro ao cadastrar! :(");</script>';
 		echo '<script>location.href="../administrativo.php?link=13";</script>';
 	}
 ?>

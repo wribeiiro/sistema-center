@@ -37,15 +37,6 @@
         <script src="https://cdn.datatables.net/buttons/1.5.1/js/buttons.html5.min.js"></script>
         <script src="https://cdn.datatables.net/buttons/1.5.1/js/buttons.print.min.js"></script>
 
-        <!--verifica texto combo selecionada jquery-->
-        <script>
-            $('select#cliente').on('change', function(){
-                if( $(this).find('option:selected').text().indexOf('Devendo') > 0) {
-                    alert('O cliente está com Pendências! Verifique pagamentos!');
-                    window.location = 'administrativo.php?link=11';
-                }
-            });
-        </script>
         <script>
             $(document).ready(function() {
 
@@ -61,17 +52,12 @@
 
                 $('#table-titulos').DataTable({
                     responsive: true,
+                    order: [ 6, 'asc' ],
                     dom: 'Bfrtip',
                     buttons: [
                         'copy', 'csv', 'excel', 'pdf', 'print'
                     ]
                 });
-
-                //tooltip
-                 $('[data-toggle="tooltip"]').tooltip();
-
-                // select 'combobox digitavel'
-                $(".js-example-basic-single").select2();
 
                 // mascaras
                 $(".calendario").mask("9999/99/99");

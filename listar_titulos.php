@@ -1,6 +1,6 @@
 <?php
 
-    $sql = "SELECT  a.data_lanc, a.data_venc, a.id AS id_tit, a.id_cliente, a.pago, a.valor_tit, b.id, b.nome
+    $sql = "SELECT  a.data_lanc, a.tipo_conta, a.data_venc, a.id AS id_tit, a.id_cliente, a.pago, a.valor_tit, b.id, b.nome
     FROM 
         contas_pr a
     INNER JOIN 
@@ -11,7 +11,7 @@
     <div id="page-wrapper">
         <div class="row">
             <div class="col-lg-12">
-                <h1 class="page-header">Contas a Pagar \ Receber</h1>
+                <h1 class="page-header">Lista de Contas</h1>
             </div>
         </div>
         <div class="row">
@@ -29,8 +29,9 @@
 						 	<tr>
 								<th>ID</th>
 								<th>NOME</th>
-								<th>LANÇAMENTO</th>
+								<th>DATA</th>
 								<th>VENCIMENTO</th>
+								<th>TIPO</th>
                                 <th>VALOR</th>
                                 <th>PAGO</th>
 								<th>AÇÕES</th>
@@ -41,26 +42,37 @@
 								while($linhas = mysqli_fetch_array($resultado)){
 									
 									$data_lanc  = date('d/m/Y', strtotime($linhas['data_lanc']));
-									$data_venc  = date('d/m/Y', strtotime($linhas['data_venc']));
-
-									if($linhas['pago'] == 'S') {
-										$linhas['pago'] = 'SIM';
-									} else {
-										$linhas['pago'] = 'NÃO';
-									}
-
+									$data_venc  = date('d/m/Y', strtotime($linhas['data_venc']));			
 									echo "<tr>";
                                         echo "<td>".$linhas['id_tit']."</td>";
                                         echo "<td>".strtoupper($linhas['nome'])."</td>";
                                         echo "<td>".$data_lanc."</td>";
 										echo "<td>".$data_venc."</td>";
-										echo "<td>". number_format($linhas['valor_tit'], 2, '.', ',')  ."</td>";
-                                        echo "<td>".$linhas['pago']."</td>";
+
+										if($linhas['tipo_conta'] == 'P') {
+											$linhas['tipo_conta'] = 'PAGAR';
+											echo "<td><span style=\"background: #C9302C\" class=\"badge\">".$linhas["tipo_conta"]."</span></td>";
+										} else {
+											$linhas['tipo_conta'] = 'RECEBER';
+											echo "<td><span style=\"background: #449D44\" class=\"badge\">".$linhas["tipo_conta"]."</span></td>";
+										}
+
+										echo "<td> R$ ". number_format($linhas['valor_tit'], 2, '.', ',')  ."</td>";
+										
+										if($linhas['pago'] == 'S') {
+											$linhas['pago'] = 'SIM';
+											echo "<td><span style=\"background: #449D44\" class=\"badge\">".$linhas['pago']."</span></td>";
+										} else {
+											$linhas['pago'] = 'NÃO';
+											echo "<td><span style=\"background: #C9302C\" class=\"badge\">".$linhas['pago']."</span></td>";
+										}
 										?>
 										<td> 
-											<a href='administrativo.php?link=39&id=<?php echo $linhas['id_tit']; ?>' title='Editar'><button type="button" class="btn btn-primary btn-sm">EDITAR</button></a>
+											<a style="text-decoration: none"  href='administrativo.php?link=39&id=<?php echo $linhas['id_tit']; ?>' title=''>
+												<span style="background: #286090;" class="badge">Editar</span>
+											</a>
 
-											<a href='processa/proc_apagar_titulos.php?id=<?php echo $linhas['id_tit']; ?>' title='Excluir'><button type="button" class="btn btn-danger btn-sm">EXCLUIR</button></a>
+											<a style="text-decoration: none" href='processa/proc_apagar_titulos.php?id=<?php echo $linhas['id_tit']; ?>' title='Excluir'><span style="background: #C9302C;" class="badge">Excluir</span></a>
                                         </td>
 										<?php
 									echo "</tr>";
