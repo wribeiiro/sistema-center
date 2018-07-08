@@ -62,12 +62,12 @@
 	$query = mysqli_query($con, $sql);
 
 	if (mysqli_affected_rows($con) > 0 ):
-		//echo $sql;
+		//echo $sql . 'ok';
 		echo '<script>alert("Título editado com Sucesso! :)");</script>';
 		echo '<script>location.href="../administrativo.php?link=37";</script>';
     else:
-        //echo $sql;
-		echo '<script>alert("Desculpe, ocorreu um erro ao editar título! :(");</script>';
+        echo $sql;
+	    echo '<script>alert("Desculpe, ocorreu um erro ao editar título! :(");</script>';
 		echo '<script>location.href="../administrativo.php?link=37";</script>';
     endif;
 ?>

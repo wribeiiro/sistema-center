@@ -30,12 +30,12 @@
     
 	if (is_null($_POST["data_pgto"]) || $_POST["data_pgto"] == ''):
 		$pago  = 'N';
-		$sql   = "INSERT INTO titulos_rec (id_cliente, tipo_conta, data_lanc, data_venc, data_pag, num_nota, valor_tit, valor_pago, valor_dif, pago) VALUES ('$cliente', '$tipoc',  '$ndata_lanc', '$ndata_venc' , default, '$documento', '$valor_tit', '$valor_pago', '$valor_dif', '$pago')";
+		$sql   = "INSERT INTO contas_pr (id_cliente, tipo_conta, data_lanc, data_venc, data_pag, num_nota, valor_tit, valor_pago, valor_dif, pago) VALUES ('$cliente', '$tipoc',  '$ndata_lanc', '$ndata_venc' , default, '$documento', '$valor_tit', '$valor_pago', '$valor_dif', '$pago')";
 	else:
 		$ndata_pgto  = date('Y-m-d', strtotime(str_replace('/','-', $_POST["data_pgto"])));
 		$pago  = 'S';
 
-		$sql   = "INSERT INTO titulos_rec (id_cliente, tipo_conta, data_lanc, data_venc, data_pag, num_nota, valor_tit, valor_pago, valor_dif, pago) VALUES ('$cliente', '$tipoc', '$ndata_lanc', '$ndata_venc' , '$ndata_pgto', '$documento', '$valor_tit', '$valor_pago', '$valor_dif', '$pago')";
+		$sql   = "INSERT INTO contas_pr (id_cliente, tipo_conta, data_lanc, data_venc, data_pag, num_nota, valor_tit, valor_pago, valor_dif, pago) VALUES ('$cliente', '$tipoc', '$ndata_lanc', '$ndata_venc' , '$ndata_pgto', '$documento', '$valor_tit', '$valor_pago', '$valor_dif', '$pago')";
 	endif;
    
 	
@@ -46,6 +46,7 @@
 		echo '<script>alert("Título lançado com Sucesso! :)");</script>';
 		echo '<script>location.href="../administrativo.php?link=37";</script>';
 	} else {
+		echo $sql;
 		echo '<script>alert("Desculpe, ocorreu um erro ao lançar título! :(");</script>';
 		echo '<script>location.href="../administrativo.php?link=37";</script>';
 	}

@@ -89,7 +89,7 @@
                         <textarea class="form-control" name="documento" id="documento" rows="5" placeholder="Número da nota, ou documento.."><?= $linhas['num_nota'] ?></textarea>
                     </div>
                 </div>					
-                <input type="text" class="hidden" value="<?=$linhas['id']?>" name="id">
+                <input type="text" class="hidden" value="<?=$linhas['id_tit']?>" name="id">
                 <div class="form-group">
                     <div class="col-sm-4">
                         <button type="submit" class="btn btn-success"><i class="fa fa-pencil"></i> Editar</button>
